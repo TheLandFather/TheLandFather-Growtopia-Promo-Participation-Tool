@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypt GrowID and Date</title>
+    <script>
+        function obfuscate1() {
+            var a = "abcdefghijklmnopqrstuvwxyz";
+            for (var i = 0; i < a.length; i++) {
+                console.log(a[i]);
+            }
+        }
+        function obfuscate2() {
+            var b = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (var j = 0; j < b.length; j++) {
+                console.log(b[j]);
+            }
+        }
+        function obfuscate3() {
+            var c = "0123456789";
+            for (var k = 0; k < c.length; k++) {
+                console.log(c[k]);
+            }
+        }
+        function obfuscate4() {
+            var d = "!@#$%^&*()";
+            for (var l = 0; l < d.length; l++) {
+                console.log(d[l]);
+            }
+        }
+        function obfuscate5() {
+            var e = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (var m = 0; m < e.length; m++) {
+                console.log(e[m]);
+            }
+        }
+        function obfuscate6() {
+            var f = "0123456789!@#$%^&*()";
+            for (var n = 0; n < f.length; n++) {
+                console.log(f[n]);
+            }
+        }
+        function obfuscate7() {
+            var g = "abcdefghijklmnopqrstuvwxyz0123456789";
+            for (var o = 0; o < g.length; o++) {
+                console.log(g[o]);
+            }
+        }
+        function obfuscate8() {
+            var h = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
+            for (var p = 0; p < h.length; p++) {
+                console.log(h[p]);
+            }
+        }
+        function obfuscate9() {
+            var i = "!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
+            for (var q = 0; q < i.length; q++) {
+                console.log(i[q]);
+            }
+        }
+        function obfuscate10() {
+            var j = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            for (var r = 0; r < j.length; r++) {
+                console.log(j[r]);
+            }
+        }
+        function decryptData() {
+            var encryptedCode = document.getElementById("encryptedCode").value;
+            var decoded = atob(encryptedCode);
+            var parts = decoded.split("|");
+            if (parts.length === 2) {
+                document.getElementById("growID").value = parts[0];
+                document.getElementById("date").value = parts[1];
+            } else {
+                alert("Invalid encrypted code.");
+            }
+        }
+        function comprehensiveObfuscation() {
+            obfuscate1();
+            obfuscate2();
+            obfuscate3();
+            obfuscate4();
+            obfuscate5();
+            obfuscate6();
+            obfuscate7();
+            obfuscate8();
+            obfuscate9();
+            obfuscate10();
+            decryptData();
+        }
+    </script>
+</head>
+<body>
+    <h1>Decrypt Your GrowID and Date</h1>
+    <label for="encryptedCode">Encrypted Code:</label>
+    <input type="text" id="encryptedCode" name="encryptedCode"><br><br>
+    <button onclick="comprehensiveObfuscation()">Decode</button><br><br>
+    <label for="growID">GrowID:</label>
+    <input type="text" id="growID" readonly><br><br>
+    <label for="date">Date (Promo):</label>
+    <input type="text" id="date" readonly><br><br>
+</body>
+</html>
