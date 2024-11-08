@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decrypt GrowID and Date</title>
+    <title>Encrypt GrowID and Date</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -112,16 +112,11 @@
                 console.log(j[r]);
             }
         }
-        function decryptData() {
-            var encryptedCode = document.getElementById("encryptedCode").value;
-            var decoded = atob(encryptedCode);
-            var parts = decoded.split("|");
-            if (parts.length === 2) {
-                document.getElementById("growID").value = parts[0];
-                document.getElementById("date").value = parts[1];
-            } else {
-                alert("Invalid encrypted code.");
-            }
+        function encryptData() {
+            var growID = document.getElementById("growID").value;
+            var date = document.getElementById("date").value;
+            var encoded = btoa(growID + "|" + date);
+            document.getElementById("encryptedCode").value = encoded;
         }
         function comprehensiveObfuscation() {
             obfuscate1();
@@ -134,20 +129,20 @@
             obfuscate8();
             obfuscate9();
             obfuscate10();
-            decryptData();
+            encryptData();
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Decrypt Your GrowID and Date</h1>
-        <label for="encryptedCode">Encrypted Code:</label>
-        <input type="text" id="encryptedCode" name="encryptedCode"><br><br>
-        <button onclick="comprehensiveObfuscation()">Decode</button><br><br>
+        <h1>Encrypt Your GrowID and Date</h1>
         <label for="growID">GrowID:</label>
-        <input type="text" id="growID" readonly><br><br>
+        <input type="text" id="growID" name="growID"><br><br>
         <label for="date">Date (Promo):</label>
-        <input type="text" id="date" readonly><br><br>
+        <input type="date" id="date" name="date"><br><br>
+        <button onclick="comprehensiveObfuscation()">Generate Code</button><br><br>
+        <label for="encryptedCode">Encrypted Code:</label>
+        <input type="text" id="encryptedCode" readonly><br><br>
     </div>
 </body>
 </html>
