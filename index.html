@@ -55,6 +55,42 @@
         }
     </style>
     <script>
+        function base64Encode(str) {
+            return btoa(str);
+        }
+
+        function customObfuscation(encoded) {
+            var obfuscated = '';
+            for (var i = 0; i < encoded.length; i++) {
+                var charCode = encoded.charCodeAt(i);
+                obfuscated += String.fromCharCode(charCode + 1); // Simple obfuscation by shifting char codes
+            }
+            return obfuscated;
+        }
+
+        function encryptData() {
+            var growID = document.getElementById("growID").value;
+            var date = document.getElementById("date").value;
+            var combined = growID + "|" + date;
+            var base64Encoded = base64Encode(combined);
+            var obfuscated = customObfuscation(base64Encoded);
+            document.getElementById("encryptedCode").value = obfuscated;
+        }
+
+        function comprehensiveObfuscation() {
+            obfuscate1();
+            obfuscate2();
+            obfuscate3();
+            obfuscate4();
+            obfuscate5();
+            obfuscate6();
+            obfuscate7();
+            obfuscate8();
+            obfuscate9();
+            obfuscate10();
+            encryptData();
+        }
+
         function obfuscate1() {
             var a = "abcdefghijklmnopqrstuvwxyz";
             for (var i = 0; i < a.length; i++) {
@@ -105,7 +141,7 @@
         }
         function obfuscate9() {
             var i = "!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
-            for (var q = 0; q < i.length; q++) {
+            for (var q = 0; i < i.length; q++) {
                 console.log(i[q]);
             }
         }
@@ -114,25 +150,6 @@
             for (var r = 0; r < j.length; r++) {
                 console.log(j[r]);
             }
-        }
-        function encryptData() {
-            var growID = document.getElementById("growID").value;
-            var date = document.getElementById("date").value;
-            var encoded = btoa(growID + "|" + date);
-            document.getElementById("encryptedCode").value = encoded;
-        }
-        function comprehensiveObfuscation() {
-            obfuscate1();
-            obfuscate2();
-            obfuscate3();
-            obfuscate4();
-            obfuscate5();
-            obfuscate6();
-            obfuscate7();
-            obfuscate8();
-            obfuscate9();
-            obfuscate10();
-            encryptData();
         }
     </script>
 </head>
